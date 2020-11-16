@@ -16,8 +16,7 @@
   font-size: 3rem;
 }
 
-/* .aboutUs {
-  background-image: url('/images/opinion.jpg');
+/* .shop {
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
@@ -25,17 +24,17 @@
   font-size: 100px;
 } */
 
-.enviornment {
-  /* background-image: url ('/images/economy.jpg'); */
+/* .environment {
+  background-image: url ('/images/economy.jpg');
   background-position: center;
   background-size: fill;
   background-repeat: no-repeat;
   color: black;
   font-size: 100px;
-}
+} */
 
-/* .signUp {
-  background-image: url('/images/getUpdates.jpg');
+/* .sign-up {
+  background-image: url('/images/getUpdates');
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;

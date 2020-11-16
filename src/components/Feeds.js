@@ -6,11 +6,8 @@ import './Feeds.css';
 function Feeds() {
     return (
         <div className="feed-container">
-            <video>
-                <source src="https://drive.google.com/file/d/1Kg1V0b1ET0TWU9pJa2lti17cnYiargp3/preview"
-                type='video/mp4'/> 
-                </video>
-            <h1>Get your latest <i>NEWS</i> here!</h1>
+            <video src="/video/traffic.mp4" autoPlay loop muted />
+            <h1>Get the latest <i>CHATTER</i> here!</h1>
             <div className="sub-btns">
                     <Button
                     className='btns'
@@ -19,13 +16,13 @@ function Feeds() {
                 >
                     GET STARTED
                     </Button>
-                    <Button
+                    {/* <Button
                     className='btns'
                     buttonStyle='btn--primary'
                     buttonSize='btn--large'
                 >
                         PICK A TOPIC <i className='far-play-circle' />
-                    </Button>
+                    </Button> */}
                 </div>
             </div>
         );

@@ -47,21 +47,21 @@ window.addEventListener('resize', showButton);
                         </Link>
                     </li>
                     <li className='nav-item'>
-                        <Link to='/sign-up' 
+                        <Link to='/signUp' 
                         className='nav-links' 
                         onClick={closeMobileMenu}>
                             Sign Up
                         </Link>
                     </li>
                     <li className='nav-item'>
-                        <Link to='/about_us' 
+                        <Link to='/aboutUs' 
                             className='nav-links' 
                             onClick={closeMobileMenu}>
                             About Us
                         </Link>
                     </li>
                 </ul>
-                {button && <Button buttonStyle='btn--outline'>SIGN UP</Button>}
+                {button && <Button buttonStyle='btn--outline'>CHAT</Button>}
             </div>
         </nav>
     </>

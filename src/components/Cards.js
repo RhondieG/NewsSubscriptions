@@ -23,7 +23,7 @@ function Cards() {
                         />
                         <CardItem 
                         src="images/opinion.jpg"
-                        text="Whats your Thoughts?"
+                        text="Give Us Your Opinion?"
                         label="Opinion"
                         path='opinion'
                         />
@@ -44,8 +44,8 @@ function Cards() {
                         <CardItem 
                             src="images/pollution.jpg"
                             text="Save Our Planet"
-                            label="Enviornment"
-                            path='enviornment'
+                            label="Environment"
+                            path='environment'
                             />
                     </ul>
                 </div>
