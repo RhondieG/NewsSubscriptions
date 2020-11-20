@@ -1,8 +1,9 @@
 import React from 'react';
-import '../../App.css';
+import '../App.css';
 
 
-class Chat extends React.Component {
+
+class Tvbox extends React.Component {
 
     /**
      * constructor
@@ -71,4 +72,4 @@ class Chat extends React.Component {
 
 
 
-export default Chat;
+export default Tvbox;

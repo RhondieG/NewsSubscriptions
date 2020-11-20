@@ -13,6 +13,7 @@ import Opinion from './components/pages/Opinion';
 import Stories from './components/pages/Stories';
 import Numbers from './components/pages/Numbers';
 import Chat from './components/pages/Chat';
+import Purchase from './components/pages/Purchase';
 
 
 function App() {
@@ -31,6 +32,7 @@ function App() {
           <Route path='/stories'  component ={Stories} />
           <Route path='/numbers'  component ={Numbers} />
           <Route path='/chat'  component ={Chat} />
+          <Route path='/purchase'  component ={Purchase} />
         </Switch>
       </Router>
     </>

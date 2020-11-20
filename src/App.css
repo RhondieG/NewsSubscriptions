@@ -16,25 +16,25 @@
   font-size: 3rem;
 }
 
-/* .shop {
-  background-position: center;
+/* .purchase {
+  background-color: blue;
   background-size: cover;
   background-repeat: no-repeat;
   color: #fff;
   font-size: 100px;
-} */
+} 
 
-/* .environment {
-  background-image: url ('/images/economy.jpg');
+.environment {
+  background-color: blue;
   background-position: center;
   background-size: fill;
   background-repeat: no-repeat;
   color: black;
   font-size: 100px;
-} */
+}
 
-/* .sign-up {
-  background-image: url('/images/getUpdates');
+.signUp {
+  background-color: blue;
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
