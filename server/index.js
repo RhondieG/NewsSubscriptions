@@ -54,8 +54,8 @@ app.get("/", (req, res) => {
   res.render("index");
 });
 
-app.get("/users/register", checkAuthenticated, (req, res) => {
-  res.render("register.ejs");
+app.get("/registration/", checkAuthenticated, (req, res) => {
+  res.render("registration.ejs");
 });
 
 app.get("/users/login", checkAuthenticated, (req, res) => {
@@ -73,8 +73,8 @@ app.get("/users/logout", (req, res) => {
   res.render("index", { message: "You have logged out successfully" });
 });
 
-app.post("/users/register", async (req, res) => {
-  let { name, email, password, password2 } = req.body;
+app.post("/registration", async (req, res) => {
+  let { user_name, user_email, user_password } = req.body;
 
   let errors = [];
 
