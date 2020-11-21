@@ -15,19 +15,19 @@ function ProductItems() {
                         <CardItem 
                         src="images/mug.png"
                         text="Have a cup of, Yo!"
-                        label="Mug"
+                        label="7.99"
                         path='purchase'
                         />
                         <CardItem 
                         src="images/pillow.png"
                         text="Throw Pillow"
-                        label="10in"
+                        label="13.99"
                         path='purchase'
                         />
                         <CardItem 
                         src="images/sticker.png"
                         text="Stick It Up?"
-                        label="Sticker"
+                        label="2.99"
                         path='purchase'
                         />
                     </ul>

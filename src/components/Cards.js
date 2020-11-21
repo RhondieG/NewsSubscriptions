@@ -31,13 +31,13 @@ function Cards() {
                     <ul className="cards__items">
                         <CardItem 
                             src="images/polls.jpg"
-                            text="Dem v.s. GOP"
+                            text="Dem vs GOP"
                             label="Polls"
                             path='polls'
                             />
                         <CardItem 
                             src="images/bull.jpg"
-                            text="Bull v.s Bear"
+                            text="Bull vs Bear"
                             label="Market"
                             path='market'
                             />
