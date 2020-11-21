@@ -10,13 +10,13 @@ app.use(express.json());//req.body
 
 //ROUTES//
 
-const express = require("express");
+
 const bcrypt = require("bcrypt");
 const passport = require("passport");
 const flash = require("express-flash");
 const session = require("express-session");
 require("dotenv").config();
-const app = express();
+
 const path = require('path');
 
 const PORT = process.env.PORT || '3001'
@@ -50,12 +50,12 @@ app.use(passport.initialize());
 app.use(passport.session());
 app.use(flash());
 
-app.get("/", (req, res) => {
+app.get("https://git.heroku.com/newssubscription.git", (req, res) => {
   res.render("index");
 });
 
-app.get("/users/register", checkAuthenticated, (req, res) => {
-  res.render("register.ejs");
+app.get("/registration", checkAuthenticated, (req, res) => {
+  res.render("registation.ejs");
 });
 
 app.get("/users/login", checkAuthenticated, (req, res) => {
@@ -73,19 +73,18 @@ app.get("/users/logout", (req, res) => {
   res.render("index", { message: "You have logged out successfully" });
 });
 
-app.post("/users/register", async (req, res) => {
-  let { name, email, password, password2 } = req.body;
+app.post("/registration", async (req, res) => {
+  let { user_name, user_email, user_password } = req.body;
 
   let errors = [];
 
   console.log({
-    name,
-    email,
-    password,
-    password2
+    user_name,
+    user_email,
+    user_password
   });
 
-  if (!name || !email || !password || !password2) {
+  if (!name || !email || !password  ) {
     errors.push({ message: "Please enter all fields" });
   }
 
@@ -258,9 +257,6 @@ function checkNotAuthenticated(req, res, next) {
   res.redirect("/users/login");
 }
 
-app.listen(PORT, () => {
-  console.log(`Server running on port ${PORT}`);
-});
 
 
 app.post("/posts", async (req,res) => {
@@ -290,6 +286,6 @@ app.post("/posts", async (req,res) => {
 
 
 
-app.listen(5000, () => {
-    console.log("server has start on PORT 3000");
-}) 
+app.listen(PORT, () => {
+  console.log(`Server running on port ${PORT}`);
+});
