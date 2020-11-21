@@ -54,8 +54,13 @@ app.get("https://git.heroku.com/newssubscription.git", (req, res) => {
   res.render("index");
 });
 
+<<<<<<< HEAD
 app.get("/registration", checkAuthenticated, (req, res) => {
   res.render("registation.ejs");
+=======
+app.get("/registration/", checkAuthenticated, (req, res) => {
+  res.render("registration.ejs");
+>>>>>>> 9e6b9edf78623fa20773ace83a088cd73b75f3d1
 });
 
 app.get("/users/login", checkAuthenticated, (req, res) => {
