@@ -6,7 +6,7 @@ import './Feeds.css';
 function Feeds() {
     return (
         <div className="feed-container">
-            <video src="/images/stillbox.jpg" autoPlay loop muted />
+            <video src="/video/chatter.mp4" autoPlay loop muted />
             <h1>Get the latest <i>CHATTER</i> here!</h1>
             <div className="sub-btns">
                     <Button
