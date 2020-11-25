@@ -14,7 +14,7 @@ function Feeds() {
                     buttonStyle='btn--outline'
                     buttonSize='btn--large'
                 >
-                    GET STARTED
+                    LOGIN
                     </Button>
                     {/* <Button
                     className='btns'

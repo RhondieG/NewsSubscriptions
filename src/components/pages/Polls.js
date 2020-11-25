@@ -19,7 +19,7 @@ export async function getServerSideProps() {
 export default function Polls ( { data }) {
     console.log(data, data);
     return <div>
-        <h1 className='polls'>Recounting, Really?</h1>
+        <h1 className='polls'>The Numbers Are In</h1>
         <div className="video-box">
             
        

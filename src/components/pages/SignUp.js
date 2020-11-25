@@ -1,6 +1,5 @@
 import React from 'react';
 import '../../App.css';
-import { Link } from 'react-router-dom';
 import { Form, Button } from "react-bootstrap";
 
     export default function SignUp() {

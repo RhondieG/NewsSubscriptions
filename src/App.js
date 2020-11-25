@@ -14,6 +14,7 @@ import Stories from './components/pages/Stories';
 import Numbers from './components/pages/Numbers';
 import Chat from './components/pages/Chat';
 import Purchase from './components/pages/Purchase';
+import Login from './components/Login';
 
 
 function App() {
@@ -24,6 +25,7 @@ function App() {
         <Switch>
           <Route path='/' exact component ={Home} />
           <Route path='/signUp' component ={SignUp} />
+          <Route path='/login' component ={Login} />
           <Route path='/aboutUs'  component ={AboutUs} />
           <Route path='/environment'  component ={Environment} />
           <Route path='/market'  component ={Market} />
