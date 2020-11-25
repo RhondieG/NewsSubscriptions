@@ -27,11 +27,11 @@ import { Form, Button } from "react-bootstrap";
                 <Form.Group controlId="formBasicCheckbox">
                     <Form.Check type="checkbox" label="Check me out" />
                 </Form.Group>
-                    <Link to='/chat' className='btn-mobile'>
+                    {/* <Link to='/chat' className='btn-mobile'> */}
                         <Button variant="primary" type="submit">
                             Submit
                         </Button>
-                    </Link>
+                    {/* </Link>  */}
             </Form>
         </div>)
     

@@ -20,20 +20,20 @@ const handleSubmit = (event) =>{
         <center>
             <p>10% of your purchase will be donated to <i>Girls Who Code</i>Thank You!</p>
         </center>
-        <p></p>   
+         
         <form onSubmit={handleSubmit}> 
             <label>
                 First Name:
-    <input type="text" name="first_name" />
-    </label>
-            <label>
-                <br></br> Last Name:
-    <input type="text" name="last_name" />
-    Email: <input type="text" name="email" /> <p></p>
-    Address: <input type="text" name="address" />
+                <input type="text" name="first_name" />
             </label>
-            <input type="submit" value="Submit" />
-        </form> 
+            <label>
+                    <br></br> Last Name:
+                <input type="text" name="last_name" />
+                Email: <input type="text" name="email" /> <p></p>
+                Address: <input type="text" name="address" />
+                        </label>
+                        <input type="submit" value="Submit" />
+                    </form> 
         </div>)
 
 
