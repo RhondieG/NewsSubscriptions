@@ -1,10 +1,23 @@
 const express = require("express");
 const app = express();
-const cors = require ("cors");
 const pool = require("./db");
 
+// CORS
+const cors = require ("cors");
+const whitelist = ['http://localhost:3000', 'https://heroku.com/myapp'];
+const corsOptions = {
+  credentials: true, // This is important.
+  origin: (origin, callback) => {
+    if(whitelist.includes(origin))
+      return callback(null, true)
+
+      callback(new Error('Not allowed by CORS'));
+  }
+}
+app.use(cors(corsOptions));
+
+
 //middleware
-app.use(cors());
 app.use(express.json());//req.body
 
 
@@ -54,13 +67,8 @@ app.get("https://git.heroku.com/newssubscription.git", (req, res) => {
   res.render("index");
 });
 
-<<<<<<< HEAD
 app.get("/registration", checkAuthenticated, (req, res) => {
-  res.render("registation.ejs");
-=======
-app.get("/registration/", checkAuthenticated, (req, res) => {
   res.render("registration.ejs");
->>>>>>> 9e6b9edf78623fa20773ace83a088cd73b75f3d1
 });
 
 app.get("/users/login", checkAuthenticated, (req, res) => {
@@ -79,17 +87,17 @@ app.get("/users/logout", (req, res) => {
 });
 
 app.post("/registration", async (req, res) => {
-  let { user_name, user_email, user_password } = req.body;
+  let { username, email, password } = req.body;
 
   let errors = [];
 
   console.log({
-    user_name,
-    user_email,
-    user_password
+    username,
+    email,
+    password
   });
 
-  if (!name || !email || !password  ) {
+  if (!username || !email || !password  ) {
     errors.push({ message: "Please enter all fields" });
   }
 
@@ -97,12 +105,9 @@ app.post("/registration", async (req, res) => {
     errors.push({ message: "Password must be a least 6 characters long" });
   }
 
-  if (password !== password2) {
-    errors.push({ message: "Passwords do not match" });
-  }
-
   if (errors.length > 0) {
-    res.render("register", { errors, name, email, password, password2 });
+    // res.json({ error: "errors" });
+    res.render("register", { errors, username, email, password });
   } else {
     hashedPassword = await bcrypt.hash(password, 10);
     console.log(hashedPassword);
@@ -123,16 +128,15 @@ app.post("/registration", async (req, res) => {
           });
         } else {
           pool.query(
-            `INSERT INTO users (name, email, password)
+            `INSERT INTO users (username, email, password)
                 VALUES ($1, $2, $3)
                 RETURNING id, password`,
-            [name, email, hashedPassword],
+            [username, email, hashedPassword],
             (error, results) => {
               if (error) {
                 console.log(error);
               }
-              req.flash("success_msg", "You are now registered. Please log in");
-              res.redirect("/users/login");
+              res.json({ success: "ok"});
             }
           );
         }
@@ -141,14 +145,25 @@ app.post("/registration", async (req, res) => {
   }
 });
 
-app.post(
-  "/users/login",
-  passport.authenticate("local", {
-    successRedirect: "/users/dashboard",
-    failureRedirect: "/users/login",
-    failureFlash: true
-  })
-);
+app.post("/login", function(req, res) {
+  passport.authenticate('local', function(err, user, info) {
+  if (err) {
+       res.status(500).send(JSON.stringify({
+          'error': "Internal Server Error"
+      }));
+  }
+  if (!user) {
+     res.status(401).send(JSON.stringify({
+          'error': info.message
+      }));
+  }
+  if (user) {
+      res.status(200).send(JSON.stringify({
+          'success': "Successfully logged in"
+      }));
+  }
+})(req, res);
+});
 
 //Checks to see if book is already saved then saves book's ISBN to user's account
 app.post('/users/save_book', checkNotAuthenticated, (req, res) => {
