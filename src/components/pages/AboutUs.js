@@ -5,27 +5,33 @@ export default function AboutUs () {
     return <div class="row">
         <h1 className='aboutUs'>Learn Who We Are</h1>
         <br/>
-                    <figure class="figure col-6">
-                        <div class="row ">
-                            <h2 class=" col-6 namePlate">Rhonda Gilliard</h2>
+     
+                
+            <div class="container">
+                    <div class="row">
+                        <div class="col-sm-4">
+
+                            <br/>
+
                             <a href="https://www.linkedin.com/in/rhondagilliard/" target="_blank">
-                                <img class="logo" alt="Rhonda-LinkedIn" src="/images/linkedin.png"/> 
-                            </a>
-                            <a href="https://github.com/RhondieG" target="_blank">
-                                <img class="logo" alt="Rhonda-github" src="/images/github.png"/>
-                            </a>    
-                        </div>
-                        <a href="https://ca.slack-edge.com/T0569RDC6-UMLPL6HRU-dfab49b57702-512" data-lightbox="ourTeam">
-                        <img class="Pics" src="https://ca.slack-edge.com/T0569RDC6-UMLPL6HRU-dfab49b57702-512"
-                            class="figure-img img-fluid rounded" alt="..."/>
+                            <img class="logo" alt="Rhonda-LinkedIn" src="/images/linkedin.png"/> 
                         </a>
-                        <figcaption>Builder </figcaption>
-                    </figure>
-                
-                
-                    <figure class="figure col-6">
-                        <div class="row">
-                        <h2 class="col-6 namePlate">Kendra Choice</h2>
+                        <a href="https://github.com/RhondieG" target="_blank">
+                            <img class="logo" alt="Rhonda-github" src="/images/github.png"/>
+                        </a>    
+                    </div>
+                    <a href="https://ca.slack-edge.com/T0569RDC6-UMLPL6HRU-dfab49b57702-512" data-lightbox="ourTeam">
+                    <img class="Pics" src="https://ca.slack-edge.com/T0569RDC6-UMLPL6HRU-dfab49b57702-512"
+                        class="figure-img img-fluid rounded" alt="..."/>
+                    </a>
+                    <figcaption>Builder </figcaption>
+                </div>
+          
+
+            <br/>
+
+                        {/* <div class="row">
+                        <div class="col-6">
                         <a href="https://www.linkedin.com/in/kendra-choice-1ab3b728/" target="_blank">
                             <img class="logo" alt="Kendra-LinkedIn" src="/images/linkedin.png"/>
                         </a>
@@ -34,8 +40,10 @@ export default function AboutUs () {
                         </a>
                         
                     </div>
-                        <figcaption>Scrum Master</figcaption>
-                    </figure>
+                        <figcaption>Scrum Master</figcaption> */}
+                    {/* </div> */}
                 </div>
+            </div>
+         
                 
 }

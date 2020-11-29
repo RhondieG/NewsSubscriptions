@@ -16,28 +16,13 @@
   font-size: 3rem;
 }
 
-/* .purchase {
-  background-color: blue;
-  background-size: cover;
-  background-repeat: no-repeat;
-  color: #fff;
-  font-size: 100px;
-} 
-
-.environment {
-  background-color: blue;
-  background-position: center;
-  background-size: fill;
-  background-repeat: no-repeat;
-  color: black;
-  font-size: 100px;
+.video-box{
+  align-content: center;
 }
 
-.signUp {
-  background-color: blue;
-  background-position: center;
-  background-size: cover;
-  background-repeat: no-repeat;
-  color: #fff;
-  font-size: 100px;
-}  */
+.logo {
+  display: flex;
+  align-items: center;
+    
+}
+
