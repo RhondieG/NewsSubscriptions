@@ -71,5 +71,43 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/t
 
 
 
-logo:
-       <img src="/images/logo.png"/>
+Application - 
+The purpose of this application it give an outlet for industry news, covering 
+Polls - Election
+Market - Stocks
+Fake News - 
+Environment
+
+This app was created by React-App and includes sever libaries which you will see when exploring the app.  The application is reactive, meaning it can adjust to any device you are using whether that be mobile phone, tablet and computer.
+
+You will be able to sign up/subscribe and log in.  The login function is used to access the Chat feature so you can give your thoughts on the video feeds coming in.  The "Chat" feature is still in production mode and will be release soon.
+
+*start the show*
+Stay on Home page for some time:
+
+Show Reactive component - Make application "Small" to show it can also be used for mobile apps
+
+Show "hover" animation and color change- Home/Signup/About Us/Chat
+
+Click into SignUp and create a login - This will take you to the "CHAT" page that is still be built out.
+
+Click back on CHATTER BOX to get back to home page (top left corner).
+
+Scroll down to check out the different Channels -
+
+Click into three of the Cards "go through these slowing and wait for page to load with video - but using the ChatterBox or HOME to get back to the other cards.
+
+Explain the videos are used with "iFrame"
+An iFrame is a frame within a frame. It is a component of an HTML element that allows you to embed documents, videos, and interactive media within a page. By doing this, you can display a secondary webpage on your main page. The iFrame element allows you to include a piece of content from other sources.
+
+*After showing videos"
+
+Show Purchase cards at the bottom of each page - with our Logo for items of Purchase.  
+
+"Purchase component is still being built out, but we will most likely use PayPal to finalize payment"
+
+"Click back to home"
+
+Show subscription field at the bottom of the page. 
+
+Which will in the future allow you to subscribe and get email updates on the new Chatter topics that are going on and of course any new products that are being released.

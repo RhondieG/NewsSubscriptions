@@ -1,74 +1,19 @@
 import React from 'react';
 import '../../App.css';
+import Products from '../Products'
 
 
-class Chat extends React.Component {
+export default function Chat() {
+    return <div><h1 className='environment'>Chat Feed Coming Soon</h1>
 
-    /**
-     * constructor
-     *
-     * @object  @props  parent props
-     * @object  @state  component state
-     */
-    constructor(props) {
+        <div className="video-box d-flex justify-content-center">
+            <iframe title="youtube" width="560" height="315" src="https://www.youtube.com/embed/BOdLmxy06H0?autoplay=1&controls=0" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
 
-        super(props);
+        <br />
 
-        this.state = {
-            items: [],
-            isLoaded: false
-        }
-
-    }
-
-    /**
-     * componentDidMount
-     *
-     * Fetch json array of objects from given url and update state.
-     */
-    componentDidMount() {
-
-        fetch('https://jsonplaceholder.typicode.com/users')
-            .then(res => res.json())
-            .then(json => {
-                this.setState({
-                    items: json,
-                    isLoaded: true, 
-                })
-            }).catch((err) => {
-                console.log(err);
-            });
-
-    }
-
-    /**
-     * render
-     *
-     * Render UI
-     */
-    render() {
-
-        const { isLoaded, items } = this.state;
-
-        if (!isLoaded)
-            return <div>Loading...</div>;
-
-        return (
-            <div className="Chat">
-                <ul>
-                    {items.map(item => (
-                        <li key={item.id}>
-                            Name: {item.name} | Email: {item.email}
-                        </li>
-                    ))}
-                </ul>
-            </div>
-        );
-
-    }
-
-}
-
-
-
-export default Chat;
+        <div>
+            <Products />
+        </div>
+    </div>
+};

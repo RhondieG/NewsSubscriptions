@@ -16,21 +16,21 @@ import '../../App.css';
 //     }
 // }
 
-export default function Polls ( { data }) {
+export default function Polls({ data }) {
     console.log(data, data);
     return <div>
         <h1 className='polls'>The Numbers Are In</h1>
         <div className="video-box d-flex justify-content-center">
-        <iframe width="560" height="315" src="https://www.youtube.com/embed/qhfFgKlDM8E?autoplay=1&controls=0" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-       
+            <iframe title="youtube" width="560" height="315" src="https://www.youtube.com/embed/qhfFgKlDM8E?autoplay=1&controls=0" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
 
         </div>
 
-        <br/>
+        <br />
 
-       <div>
-           <Products />
-       </div>
-        
+        <div>
+            <Products />
         </div>
+
+    </div>
 };

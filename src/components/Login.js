@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import axios from "axios";
-import { Form, Button } from "react-bootstrap";
 
 export default class Login extends Component {
   constructor(props) {
@@ -27,7 +26,7 @@ export default class Login extends Component {
 
     axios
       .post(
-        "http://localhost:3001/login",
+        "postgresql://pwknknrlranilf:70a45abeec802e456a7b22f255d0f0d306ef44747f5be8adbb53bd7164e0e077@ec2-52-203-182-92.compute-1.amazonaws.com/d3sa84srlmjbjg",
         {
           email: email,
           password: password
@@ -42,9 +41,11 @@ export default class Login extends Component {
       .then(response => {
         this.props.history.push('/chat');
           console.log("res from login", response);
-        // if (response.data.logged_in) {
-        //   this.props.handleSuccessfulAuth(response.data);
-        // }
+        if (response.data.logged_in) {
+          this.props.handleSuccessfulAuth(response.data);
+        }
+        let content = JSON.parse(response.body)
+console.log(content)
       })
       .catch(error => { // runs when login fails
         this.setState({loginErrors: error.response.data.error});
@@ -74,7 +75,7 @@ export default class Login extends Component {
             onChange={this.handleChange}
             required
           />
-          
+
           <div>
             {this.state.loginErrors}
           </div>
