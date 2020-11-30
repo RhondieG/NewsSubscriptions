@@ -4,7 +4,7 @@ const pool = require("./db");
 
 // CORS
 const cors = require ("cors");
-const whitelist = ['http://localhost:3000', 'https://heroku.com/myapp'];
+const whitelist = ['http://localhost:3000', 'https://heroku.com/myapp', "https://5fc572f6e5e86f0008fdfc3c--newsubcription.netlify.app/" ];
 const corsOptions = {
   credentials: true, // This is important.
   origin: (origin, callback) => {
@@ -67,13 +67,13 @@ app.get("https://git.heroku.com/newssubscription.git", (req, res) => {
   res.render("index");
 });
 
-app.get("/registration", checkAuthenticated, (req, res) => {
-  res.render("registration.ejs");
+app.get("/users", checkAuthenticated, (req, res) => {
+  res.render("users");
 });
 
 app.get("/users/login", checkAuthenticated, (req, res) => {
   // flash sets a messages variable. passport sets the error message
-  res.render("login.ejs");
+  res.render("login");
 });
 
 app.get("/users/dashboard", checkNotAuthenticated, (req, res) => {
@@ -86,7 +86,7 @@ app.get("/users/logout", (req, res) => {
   res.render("index", { message: "You have logged out successfully" });
 });
 
-app.post("/registration", async (req, res) => {
+app.post("/users", async (req, res) => {
   let { username, email, password } = req.body;
 
   let errors = [];
@@ -107,7 +107,7 @@ app.post("/registration", async (req, res) => {
 
   if (errors.length > 0) {
     // res.json({ error: "errors" });
-    res.render("register", { errors, username, email, password });
+    res.render("user", { errors, username, email, password });
   } else {
     hashedPassword = await bcrypt.hash(password, 10);
     console.log(hashedPassword);
@@ -123,7 +123,7 @@ app.post("/registration", async (req, res) => {
         console.log(results.rows);
 
         if (results.rows.length > 0) {
-          return res.render("register", {
+          return res.render("user", {
             message: "Email already registered"
           });
         } else {
