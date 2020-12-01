@@ -8,7 +8,7 @@ const whitelist = ['http://localhost:3000',
   'https://heroku.com/myapp',
   "https://5fc572f6e5e86f0008fdfc3c--newsubcription.netlify.app/",
   "https://newsubcription.netlify.app/"];
-  
+
 const corsOptions = {
   credentials: true, // This is important.
   origin: (origin, callback) => {
@@ -18,7 +18,7 @@ const corsOptions = {
       callback(new Error('Not allowed by CORS'));
   }
 }
-app.use(cors(corsOptions));
+app.use(cors());
 
 
 //middleware
