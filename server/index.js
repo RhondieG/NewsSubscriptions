@@ -28,6 +28,7 @@ const bcrypt = require("bcrypt");
 const passport = require("passport");
 const flash = require("express-flash");
 const session = require("express-session");
+
 require("dotenv").config();
 
 const path = require('path');
@@ -63,7 +64,7 @@ app.use(passport.initialize());
 app.use(passport.session());
 app.use(flash());
 
-app.get("https://git.heroku.com/newssubscription.git", (req, res) => {
+/* app.get("https://git.heroku.com/newssubscription.git", (req, res) => {
   res.render("index");
 });
 
@@ -84,7 +85,7 @@ app.get("/users/dashboard", checkNotAuthenticated, (req, res) => {
 app.get("/users/logout", (req, res) => {
   req.logout();
   res.render("index", { message: "You have logged out successfully" });
-});
+}); */
 
 app.post("/users", async (req, res) => {
   let { username, email, password } = req.body;
@@ -164,7 +165,7 @@ app.post("/login", function(req, res) {
   }
 })(req, res);
 });
-
+/* 
 //Checks to see if book is already saved then saves book's ISBN to user's account
 app.post('/users/save_book', checkNotAuthenticated, (req, res) => {
    let isbn = req.body.isbn;
@@ -275,9 +276,7 @@ function checkNotAuthenticated(req, res, next) {
     return next();
   }
   res.redirect("/users/login");
-}
-
-
+} */
 
 app.post("/posts", async (req,res) => {
     try {
@@ -297,14 +296,6 @@ app.post("/posts", async (req,res) => {
         console.error(err.message);
     }
 });
-
-//get all post for user
-
-//get a post for user
-
-//update a post for user
-
-
 
 app.listen(PORT, () => {
   console.log(`Server running on port ${PORT}`);

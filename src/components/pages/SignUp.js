@@ -21,7 +21,7 @@ export default function SignUp(props) {
             password: password
         };
 
-        fetch('http://localhost:3001/users', {
+        fetch('https://chatterboxnews.herokuapp.com/users', {
             method: 'POST', // or 'PUT'
             headers: {
                 'Content-Type': 'application/json',
