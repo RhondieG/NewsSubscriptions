@@ -1,6 +1,7 @@
 const express = require("express");
 const app = express();
 const pool = require("./db");
+require("dotenv").config();
 
 // CORS
 const cors = require ("cors");
@@ -30,10 +31,11 @@ app.use(express.json());//req.body
 
 const bcrypt = require("bcrypt");
 const passport = require("passport");
+
 const flash = require("express-flash");
 const session = require("express-session");
 
-require("dotenv").config();
+
 
 const path = require('path');
 
@@ -44,7 +46,6 @@ const initializePassport = require("./passportConfig");
 initializePassport(passport);
 
 // Middleware
-
 app.use(express.static(path.join(__dirname, "public")));
 
 // Parses details from a form

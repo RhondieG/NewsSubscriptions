@@ -26,29 +26,25 @@ export default class Login extends Component {
 
     axios
       .post(
-        "postgresql://pwknknrlranilf:70a45abeec802e456a7b22f255d0f0d306ef44747f5be8adbb53bd7164e0e077@ec2-52-203-182-92.compute-1.amazonaws.com/d3sa84srlmjbjg",
+        "https://chatterboxnews.herokuapp.com/login",
         {
           email: email,
           password: password
         },
-        { 
-          withCredentials: true,
+        {
           headers: {
             "Content-Type": "application/json"
-          } 
+          }
         }
       )
       .then(response => {
         this.props.history.push('/chat');
-          console.log("res from login", response);
-        if (response.data.logged_in) {
-          this.props.handleSuccessfulAuth(response.data);
-        }
+        console.log("res from login", response);
         let content = JSON.parse(response.body)
-console.log(content)
+        console.log(content)
       })
       .catch(error => { // runs when login fails
-        this.setState({loginErrors: error.response.data.error});
+        this.setState({ loginErrors: error.response.data.error });
         console.log("login error", error);
       });
     event.preventDefault();
