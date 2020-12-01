@@ -1,9 +1,8 @@
 require("dotenv").config();
 const Pool = require("pg").Pool;
 var pool = null;
-
 if (process.env.DATABASE_URL) { // connect to database from env
-    pool = new Pool(process.env.DATABASE_URL);
+    pool = new Pool({ connectionString: process.env.DATABASE_URL });
 } else { // connect to localhost database
     pool = new Pool ({
         user: "pwknknrlranilf",

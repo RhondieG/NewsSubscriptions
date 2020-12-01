@@ -6,7 +6,7 @@ import './Feeds.css';
 function Feeds() {
     return (
         <div className="feed-container">
-            <img alt="daily news" src="./images/dailyNews.jpg"/>
+            <img className="hero-image" alt="daily news" src="./images/dailyNews.jpg"/>
             <h1>Get the latest <i>CHATTER</i> here!</h1>
             <div className="sub-btns">
                     <Button
