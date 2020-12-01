@@ -4,7 +4,11 @@ const pool = require("./db");
 
 // CORS
 const cors = require ("cors");
-const whitelist = ['http://localhost:3000', 'https://heroku.com/myapp', "https://5fc572f6e5e86f0008fdfc3c--newsubcription.netlify.app/" ];
+const whitelist = ['http://localhost:3000',
+  'https://heroku.com/myapp',
+  "https://5fc572f6e5e86f0008fdfc3c--newsubcription.netlify.app/",
+  "https://newsubcription.netlify.app/"];
+  
 const corsOptions = {
   credentials: true, // This is important.
   origin: (origin, callback) => {
